@@ -23,7 +23,8 @@ When this API accesses SORACOM service, it takes authKey and token automatically
 ```
 var Soracom = require('soracom_api');
 var soracom = new Soracom({email: 'mail address',password:'password'});
-soracom.get('/subscriber/imsi',function(err,res){
+soracom.get('/subscribers',function(err,res){
+  console.log({err:err,res:res});
 });
 ```
 
