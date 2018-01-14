@@ -33,7 +33,7 @@ soracom.get('/subscribers',function(err,res){
 ```
 var Soracom = require('soracom_api');
 var soracom = new Soracom({authKeyId: 'keyId',authKey:'secret'});
-soracom.put('/subscriber/imsi/tags',[
+soracom.put('/subscribers/imsi/tags',[
   {
     "tagName": "name",
     "tagValue": "my_test_sim"
