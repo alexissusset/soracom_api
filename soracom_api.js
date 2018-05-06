@@ -4,6 +4,7 @@
 *	var Soracom = require('./soracom');
 *	var soracom = new Soracom({email: 'mail address',password:'password'});
 *	var soracom = new Soracom({authKeyId: 'keyId',authKey:'secret'});
+*	var soracom = new Soracom({userName:'mail address',password:'password',operatorId:'Operator ID'}); // SAM User login
 */
 module.exports = function(obj) {
 	const https = require('https');
