@@ -16,7 +16,7 @@ var soracom = new Soracom({email: 'mail address',password:'password'});
 var soracom = new Soracom({authKeyId: 'keyId',authKey:'secret'});
 ```
 ```
-var soracom = new Soracom({userName:'mail address',password:'password',operatorId:'Operator ID'}); // SAM User login
+var soracom = new Soracom({userName:'user name',password:'password',operatorId:'Operator ID'}); // SAM User login
 ```
 
 When this API accesses SORACOM service, it takes authKey and token automatically.
