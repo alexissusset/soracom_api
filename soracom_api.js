@@ -96,14 +96,21 @@ module.exports = function(obj) {
 					headers: node.session.headers
 				};
 				var req = https.request(options, (res) => {
+					let data = '';
 					res.setEncoding('utf8');
 					res.on('data', (chunk) => {
-						var res = JSON.parse(chunk);
-						callback(null,res);
+						data += chunk;
 					});
-					req.on('error', (e) => {
-						callback(e,null);
+					res.on('end', () => {
+						if(res.statusCode < 200 || res.statusCode > 299){
+							// API Error
+							callback(data,null);							
+						}else{
+							callback(null,data);
+						}
 					});
+				}).on('error', (e) => {
+					callback(e,null);
 				});
 				if(method !== 'GET') {
 					if(typeof params !== 'function') {
